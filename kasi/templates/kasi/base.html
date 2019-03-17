@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'kasi/blog.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <title></title>
+  </head>
+
+  <body>
+    <div class="heading">
+        <h1>My Dream Voice</h1>
+    </div>
+    <div class="intro container">
+      <h2>Hello! I am Kashyap.</h2>
+      <img src="{% static 'kasi/images/kasi.jpg' %}" alt="" height="400px" width="300px">
+    </div>
+    <div class="description container">
+      <h3>"Me"</h3>
+      <p>I am a regular street food loving Mumbaiker who has crazy and amazing dreams which I would love to share with everyone. </p>
+      <p>My Stories can turn you to a good mood. So beware to keep Icecream before you start. Trust me you will crave for it.</p>
+    </div>
+    {% block Stories %}
+    {% endblock %}
+    <div class="contact container">
+      <p>Ok!</p>
+      <p> How do you feel?</p>
+      <p>Feel free to comment and share your thoughts!</p>
+    </div>
+    {% block Comment %}
+    {% endblock %}
+
+  </body>
+</html>

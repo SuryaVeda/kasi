@@ -1,0 +1,33 @@
+{% extends 'kasi/base.html' %}
+{% load static %}
+
+{% block Stories %}
+<div class="myStories container">
+  {% for story in story_list %}
+   <div class="trueWinner container">
+     <h3>{{ story.name }}</h3>
+     <p>{{ story.published_date }}</p>
+     <img src="{% static 'kasi/images/trueWinner.jpg' %}" height="500px" width="900px">
+     <div class="summary container">
+       <h4>Summary</h4>
+       <p>{{ story.summary }} </p>
+     </div>
+     <div class="pdf container">
+       <embed src="{% static 'kasi/pdf/trueWinner.pdf' %}" width="200px" height="300px" />
+       <a href="{% static 'kasi/pdf/trueWinner.pdf' %}"><p>Download PDF</p></a>
+     </div>
+   </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block Comment %}
+<div class="comments container">
+  <a href="{% url 'kasi:comment' %}">Leave a comment</a>
+  <p>Total number of comments: {{ comments.count }}</p>
+  {% for comment in comments %}
+      <p>{{ comment.comment_text }} - {{ comment.user }}</p>
+  {% endfor %}
+
+</div>
+{% endblock %}
